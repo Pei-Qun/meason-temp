@@ -18,21 +18,22 @@
   <title>音樂交流平台｜Meason 迷聲</title>
 </head>
 <body>
+  <div class="loading"><img src="img/loading.svg" width="100" alt=""></div>
   <div class="container">
     <div class="banner">
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="img/b-1.jpg" alt="" width="100%">
+            <img src="img/b-1.jpg" alt="提升台灣音樂風氣，由你我做起" width="100%">
           </div>
           <div class="swiper-slide">
-            <img src="img/b-2.jpg" alt="" width="100%">
+            <img src="img/b-2.jpg" alt="個人音樂創作分享" width="100%">
           </div>
           <div class="swiper-slide">
-            <img src="img/b-3.jpg" alt="" width="100%">
+            <img src="img/b-3.jpg" alt="表演機會聚集地，玩音樂更有動力" width="100%">
           </div>
           <div class="swiper-slide">
-            <img src="img/b-4.jpg" alt="" width="100%">
+            <img src="img/b-4.jpg" alt="玩音樂? 來迷聲" width="100%">
           </div>
         </div>
       </div>
@@ -88,15 +89,17 @@
     }, false);
     var submitFun = function(e){
       var url = 'https://glacial-bayou-94392.herokuapp.com/temp_register';
+      $('.loading').css('display','flex');
       axios.post(url, {
         email: document.getElementById('email').value,
         msg: document.getElementById('msg').value
       })
       .then(function (response) {
-        console.log(response);
+        window.location = '/done.html';
       })
       .catch(function (error) {
         console.log(error);
+        alert('送出失敗，請重試');
       });
     }
   </script>
