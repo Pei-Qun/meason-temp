@@ -83,6 +83,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     document.querySelector("#form").addEventListener("submit", function(event){
+      event.preventDefault();
       submitFun();
     }, false);
     var submitFun = function(e){
